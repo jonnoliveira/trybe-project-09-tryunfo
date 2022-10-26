@@ -14,6 +14,7 @@ class App extends React.Component {
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
+    infoCardSaved: [],
   };
 
   onInputChange = ({ target }) => {
@@ -62,6 +63,36 @@ class App extends React.Component {
 
   onSaveButtonClick = (event) => {
     event.preventDefault();
+    const {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardRare,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+    } = this.state;
+
+    const objCard = {
+      cardName,
+      cardDescription,
+      cardImage,
+      cardRare,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+    };
+
+    this.setState((prevState) => (
+      { infoCardSaved: [...prevState.infoCardSaved, objCard],
+        cardName: '',
+        cardDescription: '',
+        cardImage: '',
+        cardRare: 'normal',
+        cardAttr1: '0',
+        cardAttr2: '0',
+        cardAttr3: '0',
+      }));
   };
 
   render() {
