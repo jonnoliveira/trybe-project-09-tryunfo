@@ -43,7 +43,6 @@ class App extends React.Component {
         cardAttr1,
         cardAttr2,
         cardAttr3,
-        cardTrunfo,
       } = this.state;
 
       const inputName = cardName.length === 0;
@@ -59,12 +58,6 @@ class App extends React.Component {
       || inputSumAttr || Attr1 || Attr2 || Attr3;
 
       this.setState({ isSaveButtonDisabled: isValid });
-
-      const addTrunfo = cardTrunfo
-        ? this.setState({ hasTrunfo: true })
-        : this.setState({ hasTrunfo: false });
-
-      return addTrunfo;
     });
   };
 
@@ -99,7 +92,15 @@ class App extends React.Component {
         cardAttr1: '0',
         cardAttr2: '0',
         cardAttr3: '0',
-      }));
+      }), () => {
+      const { cardTrunfo } = this.state;
+
+      const addTrunfo = cardTrunfo
+        ? this.setState({ hasTrunfo: true })
+        : this.setState({ hasTrunfo: false });
+
+      return addTrunfo;
+    });
   };
 
   render() {
@@ -114,6 +115,7 @@ class App extends React.Component {
       cardTrunfo,
       hasTrunfo,
       isSaveButtonDisabled,
+      infoCardSaved,
     } = this.state;
 
     return (
@@ -143,6 +145,20 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+        <div>
+          { infoCardSaved.map((card) => (<Card
+            key={ card.cardName }
+            cardName={ card.cardName }
+            cardDescription={ card.cardDescription }
+            cardAttr1={ card.cardAttr1 }
+            cardAttr2={ card.cardAttr2 }
+            cardAttr3={ card.cardAttr3 }
+            cardImage={ card.cardImage }
+            cardRare={ card.cardRare }
+            cardTrunfo={ card.cardTrunfo }
+          />
+          ))}
+        </div>
       </div>
     );
   }
