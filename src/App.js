@@ -43,6 +43,7 @@ class App extends React.Component {
         cardAttr1,
         cardAttr2,
         cardAttr3,
+        cardTrunfo,
       } = this.state;
 
       const inputName = cardName.length === 0;
@@ -58,6 +59,12 @@ class App extends React.Component {
       || inputSumAttr || Attr1 || Attr2 || Attr3;
 
       this.setState({ isSaveButtonDisabled: isValid });
+
+      const addTrunfo = cardTrunfo
+        ? this.setState({ hasTrunfo: true })
+        : this.setState({ hasTrunfo: false });
+
+      return addTrunfo;
     });
   };
 
