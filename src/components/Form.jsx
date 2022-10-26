@@ -21,80 +21,82 @@ class Form extends Component {
     return (
       <form>
 
-        <label htmlFor="nameCard">
+        <label htmlFor="cardName">
           Nome
           <input
             type="text"
-            name="nameCard"
+            name="cardName"
+            id="cardName"
             value={ cardName }
             onChange={ onInputChange }
             data-testid="name-input"
           />
         </label>
 
-        <label htmlFor="descriptionCard">
+        <label htmlFor="cardDescription">
           Descrição
           <textarea
-            name="descriptionCard"
+            name="cardDescription"
+            id="cardDescription"
             value={ cardDescription }
             onChange={ onInputChange }
             data-testid="description-input"
           />
         </label>
 
-        <label htmlFor="attr1">
+        <label htmlFor="cardAttr1">
           Attr01
           <input
             type="number"
-            name="attr1"
-            id="attr1"
+            name="cardAttr1"
+            id="cardAttr1"
             value={ cardAttr1 }
             onChange={ onInputChange }
             data-testid="attr1-input"
           />
         </label>
 
-        <label htmlFor="attr2">
+        <label htmlFor="cardAttr2">
           Attr02
           <input
             type="number"
-            name="attr2"
-            id="attr2"
+            name="cardAttr2"
+            id="cardAttr2"
             value={ cardAttr2 }
             onChange={ onInputChange }
             data-testid="attr2-input"
           />
         </label>
 
-        <label htmlFor="attr3">
+        <label htmlFor="cardAttr3">
           Attr03
           <input
             type="number"
-            name="attr3"
-            id="attr3"
+            name="cardAttr3"
+            id="cardAttr3"
             value={ cardAttr3 }
             onChange={ onInputChange }
             data-testid="attr3-input"
           />
         </label>
 
-        <label htmlFor="imageCard">
+        <label htmlFor="cardImage">
           Imagem
           <input
             type="text"
-            name="imageCard"
-            id="imageCard"
+            name="cardImage"
+            id="cardImage"
             value={ cardImage }
             onChange={ onInputChange }
             data-testid="image-input"
           />
         </label>
 
-        <label htmlFor="rareCard">
+        <label htmlFor="cardRare">
           Raridade
           <select
-            name="rareCard"
-            id="rareCard"
+            name="cardRare"
+            id="cardRare"
             value={ cardRare }
             onChange={ onInputChange }
             data-testid="rare-input"
@@ -105,11 +107,11 @@ class Form extends Component {
           </select>
         </label>
 
-        <label htmlFor="trunfoCard">
+        <label htmlFor="cardTrunfo">
           <input
             type="checkbox"
-            name="trunfoCard"
-            id="trunfoCard"
+            name="cardTrunfo"
+            id="cardTrunfo"
             checked={ cardTrunfo }
             onChange={ onInputChange }
             data-testid="trunfo-input"
@@ -139,9 +141,9 @@ Form.propTypes = {
   cardAttr3: PropTypes.string.isRequired,
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
-  cardTrunfo: PropTypes.string.isRequired,
-  // hasTrunfo: PropTypes.string.isRequired,
-  isSaveButtonDisabled: PropTypes.string.isRequired,
+  cardTrunfo: PropTypes.bool.isRequired,
+  // hasTrunfo: PropTypes.bool.isRequired,
+  isSaveButtonDisabled: PropTypes.bool.isRequired,
 
   onInputChange: PropTypes.func.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,

@@ -10,14 +10,21 @@ class App extends React.Component {
     cardAttr2: '',
     cardAttr3: '',
     cardImage: '',
-    cardRare: '',
+    cardRare: 'normal',
     cardTrunfo: false,
     hasTrunfo: false,
     isSaveButtonDisabled: true,
   };
 
-  onInputChange = () => {
-    console.log('onInputChange');
+  onInputChange = ({ target }) => {
+    const { name } = target;
+    const value = target.type === 'checkbox'
+      ? target.checked
+      : target.value;
+
+    this.setState({
+      [name]: value,
+    });
   };
 
   onSaveButtonClick = () => {
