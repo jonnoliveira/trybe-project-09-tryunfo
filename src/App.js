@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import Filters from './components/Filters';
 
 class App extends React.Component {
   state = {
@@ -15,6 +16,10 @@ class App extends React.Component {
     hasTrunfo: false,
     isSaveButtonDisabled: true,
     infoCardSaved: [],
+    nameFilter: '',
+    rareFilter: 'todas',
+    trunfoFilter: false,
+    isFilterDisable: false,
   };
 
   onInputChange = ({ target }) => {
@@ -43,8 +48,10 @@ class App extends React.Component {
         cardAttr1,
         cardAttr2,
         cardAttr3,
+        trunfoFilter,
       } = this.state;
 
+      //  VALIDAÇÃO BOTAO
       const inputName = cardName.length === 0;
       const inputDescription = cardDescription.length === 0;
       const inputImage = cardImage.length === 0;
@@ -58,6 +65,11 @@ class App extends React.Component {
       || inputSumAttr || Attr1 || Attr2 || Attr3;
 
       this.setState({ isSaveButtonDisabled: isValid });
+
+      //  VALIDAÇÃO TRUNFO
+      const trunfoDisable = trunfoFilter === true;
+
+      this.setState({ isFilterDisable: trunfoDisable });
     });
   };
 
@@ -96,7 +108,10 @@ class App extends React.Component {
         cardAttr3: '0',
       }), () => {
       const addTrunfo = cardTrunfo
-        ? this.setState({ hasTrunfo: true })
+        ? this.setState({
+          hasTrunfo: true,
+          cardTrunfo: false,
+        })
         : this.setState({ hasTrunfo: false });
 
       return addTrunfo;
@@ -113,6 +128,31 @@ class App extends React.Component {
     this.setState({ infoCardSaved });
   };
 
+  filtersFind = () => {
+    const {
+      infoCardSaved,
+      nameFilter,
+      rareFilter,
+      trunfoFilter,
+    } = this.state;
+
+    return infoCardSaved.filter((card) => {
+      if (nameFilter === '' && rareFilter === 'todas' && trunfoFilter === false) {
+        return infoCardSaved;
+      }
+      if (nameFilter !== '' && rareFilter === 'todas' && trunfoFilter === false) {
+        return card.cardName.includes(nameFilter);
+      }
+      if (nameFilter === '' && rareFilter !== 'todas' && trunfoFilter === false) {
+        return card.cardRare === rareFilter;
+      }
+      if (trunfoFilter === true) {
+        return card.cardTrunfo === trunfoFilter;
+      }
+      return card.cardName.includes(nameFilter);
+    });
+  };
+
   render() {
     const {
       cardName,
@@ -126,6 +166,10 @@ class App extends React.Component {
       hasTrunfo,
       isSaveButtonDisabled,
       infoCardSaved,
+      nameFilter,
+      rareFilter,
+      trunfoFilter,
+      isFilterDisable,
     } = this.state;
 
     return (
@@ -145,6 +189,7 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
+        <p>Carta:</p>
         <Card
           cardName={ cardName }
           cardDescription={ cardDescription }
@@ -155,30 +200,41 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
-        <div>
-          { infoCardSaved.map((card, index) => (
-            <div key={ card.cardName }>
-              <Card
-                key={ card.cardName }
-                cardName={ card.cardName }
-                cardDescription={ card.cardDescription }
-                cardAttr1={ card.cardAttr1 }
-                cardAttr2={ card.cardAttr2 }
-                cardAttr3={ card.cardAttr3 }
-                cardImage={ card.cardImage }
-                cardRare={ card.cardRare }
-                cardTrunfo={ card.cardTrunfo }
-              />
-              <button
-                type="reset"
-                data-testid="delete-button"
-                onClick={ () => this.onDeleteCard(card, index) }
-              >
-                Excluir
-              </button>
-            </div>
-          ))}
-        </div>
+        <p>Deck de Cartas</p>
+        <Filters
+          infoCardSaved={ infoCardSaved }
+          onInputChange={ this.onInputChange }
+          nameFilter={ nameFilter }
+          rareFilter={ rareFilter }
+          trunfoFilter={ trunfoFilter }
+          isFilterDisable={ isFilterDisable }
+        />
+        {
+          infoCardSaved !== []
+            ? this.filtersFind().map((card, index) => (
+              <div key={ card.cardName }>
+                <Card
+                  key={ card.cardName }
+                  cardName={ card.cardName }
+                  cardDescription={ card.cardDescription }
+                  cardAttr1={ card.cardAttr1 }
+                  cardAttr2={ card.cardAttr2 }
+                  cardAttr3={ card.cardAttr3 }
+                  cardImage={ card.cardImage }
+                  cardRare={ card.cardRare }
+                  cardTrunfo={ card.cardTrunfo }
+                />
+                <button
+                  type="reset"
+                  data-testid="delete-button"
+                  onClick={ () => this.onDeleteCard(card, index) }
+                >
+                  Excluir
+                </button>
+              </div>
+            ))
+            : null
+        }
       </div>
     );
   }
