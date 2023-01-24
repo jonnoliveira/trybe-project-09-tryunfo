@@ -1,13 +1,88 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# PROJETO 09 - TRYUNFO :computer:
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+## Esse projeto pertence ao módulo de `front-end` do curso da [Trybe](https://www.betrybe.com/) :green_heart:
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+## :construction: CSS em aprimoramento :construction:
+ 
+<details>
+ 
+<summary>
+  
+## 1- Resumo
+  
+</summary>
+
+No Tryunfo simulamos um jogo de cartas onde tive a grande oportunidade de aprender a criar uma página utilizando da componentização das funções da aplicação utilizando React. Além disso, pude usar o estado dos componentes para gerenciar melhor os eventos. Com tudo isso foi possível criar novas cartas e listar as cartas existentes no baralho. Veja mais abaixo!
+
+</details>
+
+#
+
+<details>
+ 
+<summary>
+ 
+## 2- Requisitos
+
+</summary>
+
+### I. Crie o formulário que será usado para adicionar cartas ao baralho
+
+### II. Adicione as props necessárias ao componente de formulário
+
+### III. Crie e renderize o componente Card com as props necessárias
+
+### IV. Crie o preview da carta que está sendo criada pelo formulário
+
+### V. Faça a validação do botão de Salvar no formulário
+
+### VI. Crie a função do botão salvar
+
+### VII. Crie a validação do Super Trunfo
+
+### VIII. Exiba a lista de cartas que estão salvas no estado
+
+### IX. Crie um botão para remover uma carta do baralho
+
+---
+
+## Requisitos bônus
+
+Sua aplicação terá três filtros de listagem de cartas: filtro por nome, por raridade e por Super Trunfo. Os filtros nome e raridade são acumulativos. O filtro Super Trunfo funciona de forma independente.
+
+### X. Crie o filtro pelo nome da carta
+
+### XI. Crie o filtro por raridade da carta
+
+###XII. Crie o filtro de Super Trunfo
+
+</details>
+
+# 
+
+<details>
+ 
+<summary>
+
+## 3- Nota do Projeto
+ 
+</summary>
+
+## 100% :heavy_check_mark:
+
+![Project-Tryunfo-Grade]()
+
+</details> 
+ 
+# 
+
+<details>
+ 
+<summary>
+
+## 4- Preview
+
+</summary>
+
+  
+</details>
