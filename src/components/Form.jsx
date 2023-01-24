@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import './Form.css';
 
 class Form extends Component {
   render() {
@@ -19,10 +21,10 @@ class Form extends Component {
     } = this.props;
 
     return (
-      <form>
+      <form className="form-floating">
 
-        <label htmlFor="cardName">
-          Nome
+        <div className="input-group">
+          <label htmlFor="cardName">Nome</label>
           <input
             type="text"
             name="cardName"
@@ -31,10 +33,8 @@ class Form extends Component {
             onChange={ onInputChange }
             data-testid="name-input"
           />
-        </label>
 
-        <label htmlFor="cardDescription">
-          Descrição
+          <label htmlFor="cardDescription">Descrição</label>
           <textarea
             name="cardDescription"
             id="cardDescription"
@@ -42,10 +42,8 @@ class Form extends Component {
             onChange={ onInputChange }
             data-testid="description-input"
           />
-        </label>
 
-        <label htmlFor="cardAttr1">
-          Attr01
+          <label htmlFor="cardAttr1">Attr01</label>
           <input
             type="number"
             name="cardAttr1"
@@ -56,10 +54,8 @@ class Form extends Component {
             onChange={ onInputChange }
             data-testid="attr1-input"
           />
-        </label>
 
-        <label htmlFor="cardAttr2">
-          Attr02
+          <label htmlFor="cardAttr2">Attr02</label>
           <input
             type="number"
             name="cardAttr2"
@@ -70,10 +66,8 @@ class Form extends Component {
             onChange={ onInputChange }
             data-testid="attr2-input"
           />
-        </label>
 
-        <label htmlFor="cardAttr3">
-          Attr03
+          <label htmlFor="cardAttr3">Attr03</label>
           <input
             type="number"
             name="cardAttr3"
@@ -84,10 +78,8 @@ class Form extends Component {
             onChange={ onInputChange }
             data-testid="attr3-input"
           />
-        </label>
 
-        <label htmlFor="cardImage">
-          Imagem
+          <label htmlFor="cardImage">Imagem</label>
           <input
             type="text"
             name="cardImage"
@@ -96,10 +88,8 @@ class Form extends Component {
             onChange={ onInputChange }
             data-testid="image-input"
           />
-        </label>
 
-        <label htmlFor="cardRare">
-          Raridade
+          <label htmlFor="cardRare">Raridade</label>
           <select
             name="cardRare"
             id="cardRare"
@@ -111,14 +101,16 @@ class Form extends Component {
             <option value="raro">raro</option>
             <option value="muito raro">muito raro</option>
           </select>
-        </label>
+        </div>
 
         {
           hasTrunfo
             ? <p>Você já tem um Super Trunfo em seu baralho</p>
             : (
-              <label htmlFor="cardTrunfo">
+              <div>
+                <label htmlFor="cardTrunfo">Super Trunfo</label>
                 <input
+                  className="form-check-input mt-0"
                   type="checkbox"
                   name="cardTrunfo"
                   id="cardTrunfo"
@@ -126,12 +118,12 @@ class Form extends Component {
                   onChange={ onInputChange }
                   data-testid="trunfo-input"
                 />
-                Super Trunfo
-              </label>
+              </div>
             )
         }
 
         <button
+          id="submit-btn"
           type="submit"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
