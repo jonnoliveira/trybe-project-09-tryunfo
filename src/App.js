@@ -25,14 +25,10 @@ class App extends React.Component {
 
   onInputChange = ({ target }) => {
     const { name } = target;
+
     const value = target.type === 'checkbox'
       ? target.checked
       : target.value;
-
-    const sum = (
-      parseFloat(cardAttr1.value)
-      + parseFloat(cardAttr2.value)
-      + parseFloat(cardAttr3.value));
 
     const maxSumValue = 210;
     const maxValue = 91;
@@ -51,6 +47,11 @@ class App extends React.Component {
         cardAttr3,
         trunfoFilter,
       } = this.state;
+
+      const sum = (
+        parseFloat(cardAttr1)
+        + parseFloat(cardAttr2)
+        + parseFloat(cardAttr3));
 
       //  VALIDAÇÃO BOTAO
       const inputName = cardName.length === 0;
@@ -218,7 +219,7 @@ class App extends React.Component {
         />
         {
           infoCardSaved !== []
-            ? this.filtersFind().map((card, index) => (
+            && this.filtersFind().map((card, index) => (
               <div key={ card.cardName }>
                 <Card
                   key={ card.cardName }
@@ -240,7 +241,6 @@ class App extends React.Component {
                 </button>
               </div>
             ))
-            : null
         }
       </div>
     );
