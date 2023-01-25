@@ -70,7 +70,7 @@ Sua aplicação terá três filtros de listagem de cartas: filtro por nome, por 
 
 ## 100% :heavy_check_mark:
 
-![Project-Tryunfo-Grade]()
+![Project-Tryunfo-Grade](https://github.com/jonnoliveira/trybe-project-09-tryunfo/blob/main/image/tryunfo-grade.png)
 
 </details> 
  
