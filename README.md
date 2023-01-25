@@ -12,7 +12,7 @@
   
 </summary>
 
-No Tryunfo simulamos um jogo de cartas onde tive a grande oportunidade de aprender a criar uma página utilizando da componentização das funções da aplicação utilizando React. Além disso, pude usar o estado dos componentes para gerenciar melhor os eventos. Com tudo isso foi possível criar novas cartas e listar as cartas existentes no baralho. Veja mais abaixo!
+No Tryunfo simulei um jogo de cartas onde tive a grande oportunidade de aprender a criar uma página utilizando da componentização das funções da aplicação utilizando React. Além disso, pude usar o estado dos componentes para gerenciar melhor os eventos. Com tudo isso foi possível criar novas cartas e listar as cartas existentes no baralho. Veja mais abaixo!
 
 </details>
 
