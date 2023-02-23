@@ -1,0 +1,88 @@
+.container-deck-example {
+  padding: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-deck-example h2 {
+  font-size: 1.2em;
+  font-weight: 400;
+  text-align: center;
+  line-height: 5vh;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+}
+
+.container-character-example {
+  width: 90%;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  padding: 1vh;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+.info-char-example {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-char-example h5 {
+  font-weight: 400;
+}
+
+.info-char-example p {
+  font-size: 0.8em;
+}
+
+.info-char-text-example h5 {
+  font-weight: 400; 
+}
+
+.info-char-text-example p {
+  font-size: 0.6em;
+  text-align: justify;
+  word-wrap: break-word;
+  font-style: italic;
+  padding: 1vh;
+}
+
+@media screen and ( min-width : 768px ) {
+  
+  .container-character-example {
+    width: 60%;
+  }
+}
+
+@media screen and ( min-width : 1024px ) {
+  
+  .container-character-example {
+    width: 50%;
+  }
+}
+
+@media screen and ( min-width : 1024px ) {
+  
+  .container-character-example {
+    width: 60%;
+  }
+
+  .info-char-example h5 {
+    font-size: 1.2em;
+  }
+
+  .info-char-example p {
+    font-size: 1.2em;
+  }
+
+  .info-char-text-example h5 {
+    font-size: 1.2em;
+  }
+
+  .info-char-text-example p {
+    font-size: 1em;
+  }
+}
+

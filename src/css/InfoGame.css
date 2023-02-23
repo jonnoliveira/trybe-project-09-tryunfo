@@ -1,0 +1,44 @@
+.info-container {
+  padding: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-container h2 {
+  font-size: 1.2em;
+  font-weight: 400;
+  text-align: center;
+  line-height: 5vh;
+  text-transform: uppercase;
+  border-bottom: 1px solid black;
+}
+
+.info-level {
+  padding-top: 2vh;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-level h4 {
+  font-weight: 400;
+}
+
+.info-container small {
+  font-size: 10px;
+  width: 80%;
+  margin-top: 3vh;
+  padding: 1vh;
+  font-style: italic;
+  text-align: center;
+  background-color: rgba(128, 128, 128, 0.555);
+  border-radius: 15px;
+}
+
+.info-container small a {
+  text-decoration: none;
+  color: blue;
+}

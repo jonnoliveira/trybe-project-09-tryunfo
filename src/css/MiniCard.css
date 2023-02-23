@@ -1,4 +1,4 @@
-.container-maker {
+.container-miniCard {
   display: flex;
   flex-direction: column;
   padding: 1vh;
@@ -8,7 +8,7 @@
   height: 100%;
 }
 
-.card {
+.miniCard {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -16,41 +16,42 @@
   overflow: hidden;
 }
 
-.card-title {
+.miniCard-title {
   font-size: larger;
 }
 
-.card-img-top {
-  height: 180px;
+.miniCard-img-top {
+  height: 80px;
 }
 
-.card-text {
+.miniCard-text {
   border: 1px solid black;
   padding: 1vh;
-  font-size: 0.6em;
+  font-size: 0.5em;
   font-style: italic;
+  font-weight: 600;
   text-align: center;
   word-wrap: break-word;
   width: 100%;
 }
 
-.card-body {
+.miniCard-body {
   width: 100%;
   padding: 1vh;
 }
 
-.card-body-atrb {
+.miniCard-body-atrb {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 1vh;
 }
 
-.card-body-atrb p {
+.miniCard-body-atrb p {
   font-size: 0.7em;
 }
 
-.card-atrib {
+.miniCard-atrib {
   text-align: center;
   width: 14vw;
   color: white;
@@ -58,17 +59,17 @@
   border-radius: 15px;
 }
 
-.classification {
+.miniCard-classification {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.classification p {
+.miniCard-classification p {
   font-size: 0.8em;
 }
 
-.card-atrib-trunf {
+.miniCard-atrib-trunf {
   text-align: center;
   text-transform: uppercase;
   border-radius: 15px;
@@ -78,7 +79,7 @@
   color: white;
 }
 
-.card-atrib-class {
+.miniCard-atrib-class {
   text-align: center;
   text-transform: uppercase;
   border-radius: 15px 0 15px 0;
@@ -91,69 +92,75 @@
 
 @media screen and ( min-width : 768px ) {
   
-  .card-body-atrb p {
+  .miniCard-body-atrb p {
     font-size: 0.8em;
+  }
+  
+  .miniCard-atrib {
+    width: 7vw;
+  }
+
+  .miniCard-text {
+    font-weight: 400;
   }
 }
 
 @media screen and ( min-width : 1024px ) {
   
-  .card-title {
-    font-size: 1.7em;
+  .miniCard-img-top {
+    height: 110px;
   }
-
-  .card-img-top {
-    height: 120px;
-  }
-
-  .card-text {
-    font-size: 0.7em;
+  
+  .miniCard-text {
+    font-size: 0.6em;
     text-align: justify;
   }
-
-  .card-body-atrb {
-    margin-top: 1.5vh;
+  
+  .miniCard-body-atrb p {
+    font-size: 0.8em;
+  }
+  
+  .miniCard-atrib {
+    width: 4vw;
   }
 
-  .card-body-atrb p {
-    font-size: 0.9em;
+  .miniCard-text {
+    font-weight: 400;
   }
 
-  .card-atrib {
-    width: 5vw;
+  .miniCard-atrib-class {
+    margin-top: 5vh;
   }
 
-  .classification p {
-    margin-top: 7vh;
+  .miniCard-classification p {
+    font-size: 0.7em;
   }
+
+  .miniCard-atrib-trunf {
+    margin-top: 5vh;
+  }
+
 }
 
 @media screen and ( min-width : 1440px ) {
+
+  .miniCard-title {
+    font-size: 1.7em;
+  }
   
-  .card-img-top {
-    height: 180px;
+  .miniCard-img-top {
+    height: 190px;
   }
-
-  .card-title {
-    font-size: 1.9em;
-    padding: 1vh;
+  
+  .miniCard-text {
+    font-size: 0.9em;
   }
-
-  .card-text {
+  
+  .miniCard-body-atrb p {
     font-size: 1em;
-    text-align: justify;
   }
 
-  .card-body-atrb p {
-    font-size: 1.3em;
-  }
-
-  .card-atrib {
-    width: 6vw;
-  }
-
-  .classification p {
-    font-size: 1.3em;
+  .miniCard-classification p {
+    font-size: 0.9em;
   }
 }
-

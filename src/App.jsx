@@ -2,7 +2,10 @@ import './App.css';
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import MiniCard from './components/MiniCard';
 import Filters from './components/Filters';
+import InfoGame from './components/InfoGame';
+import DeckExample from './components/DeckExample';
 
 class App extends React.Component {
   state = {
@@ -21,6 +24,8 @@ class App extends React.Component {
     rareFilter: 'todas',
     trunfoFilter: false,
     isFilterDisable: false,
+    question: false,
+    deck: false,
   };
 
   onInputChange = ({ target }) => {
@@ -142,9 +147,6 @@ class App extends React.Component {
       if (nameFilter === '' && rareFilter === 'todas' && trunfoFilter === false) {
         return infoCardSaved;
       }
-      // if (nameFilter !== '' && rareFilter === 'todas' && trunfoFilter === false) {
-      //   return card.cardName.includes(nameFilter);
-      // }
       if (nameFilter === '' && rareFilter !== 'todas' && trunfoFilter === false) {
 
         return card.cardRare === rareFilter;
@@ -156,6 +158,24 @@ class App extends React.Component {
       return card.cardName.toLowerCase().includes(nameFilter.toLowerCase());
     });
   };
+
+  onClickQuestion = () => {
+    const { question } = this.state;
+
+    if (question) {
+      return this.setState({ question: false })
+    }
+    this.setState({ question: true })
+  }
+
+  onClickDeck = () => {
+    const { deck } = this.state;
+
+    if (deck) {
+      return this.setState({ deck: false })
+    }
+    this.setState({ deck: true })
+  }
 
   
   render() {
@@ -175,13 +195,37 @@ class App extends React.Component {
       rareFilter,
       trunfoFilter,
       isFilterDisable,
+      question,
+      deck
     } = this.state;
 
     return (
       <div className="container-app">
           <header>
             <h1>Tryunfo - Animes</h1>
+            <div className='helpers'>
+              <button type="button" className='btn-helper' onClick={ this.onClickQuestion }>
+                <img src="https://cdn-icons-png.flaticon.com/512/7887/7887104.png" alt="Classification icon" />
+              </button>
+              <button type="button" className='btn-helper' onClick={ this.onClickDeck }>
+                <img src="https://cdn-icons-png.flaticon.com/512/6831/6831865.png" alt="Deck icon" />
+              </button>
+            </div>
           </header>
+          <div className='info-game-deck'>
+          {
+            <div className='info'>
+              {
+                question
+                  && <InfoGame />
+              }
+              {
+                deck
+                  && <DeckExample />
+              }
+            </div>
+          }
+          </div>
         <div className="container-tryunfo">
           <div className="container-cards-maker">
             <div className="container-forms">
@@ -230,7 +274,7 @@ class App extends React.Component {
               infoCardSaved !== []
                 && this.filtersFind().map((card, index) => (
                   <div key={ card.cardName } className="deck-card">
-                    <Card
+                    <MiniCard
                       key={ `${card.cardName}-${index}` }
                       cardName={ card.cardName }
                       cardDescription={ card.cardDescription }

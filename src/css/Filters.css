@@ -1,13 +1,77 @@
 .filters {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   padding: 1vh;
   background-color: aliceblue;
+  height: 20vh;
 }
 
+.filters label {
+  font-size: 0.9em;
+}
+
+.nameFilter {
+  width: 70vw;
+  padding-left: 1vw;
+}
+
+  
 .nameFilter::placeholder {
   font-style: italic;
   font-size: small;
   color: rgba(128, 128, 128, 0.589);
-  padding-left: 0.5vw;
+  padding-left: 1vw;
+}
+
+@media screen and ( min-width : 768px ) {
+  
+  .nameFilter {
+    width: 40vw;
+  }
+}
+
+@media screen and ( min-width : 1024px ) {
+
+  .filters {
+    flex-direction: row;
+    height: 7vh;
+  }
+  
+  .nameFilter {
+    width: 40vw;
+  }
+
+  #rareFilter option {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and ( min-width : 1440px ) {
+
+  .filters {
+    align-items: center;
+  }
+
+  .filters label {
+    font-size: 1.2em;
+  }
+
+  .nameFilter {
+    width: 40vw;
+    font-size: 0.8em;
+  }
+
+  .nameFilter::placeholder {
+    font-size: 0.8em;
+  }
+
+  #rareFilter {
+    font-size: 0.9em;
+  }
+
+  #rareFilter option {
+    font-size: 0.9em;
+  }
 }

@@ -49,6 +49,7 @@ class Form extends Component {
             onChange={ onInputChange }
             data-testid="description-input"
             placeholder="História da carta"
+            maxLength={200}
           />
 
           <label htmlFor="cardAttr1">Potencial Destrutivo</label>

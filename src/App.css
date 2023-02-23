@@ -10,55 +10,79 @@ body {
 }
 
 .container-app {
-  height: 100vh;
+  min-height: 100vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)),
-    url(https://images2.alphacoders.com/740/thumb-1920-740460.png);
-  background-size: cover;
+    url(https://i0.wp.com/wallpapercave.com/wp/wp5493885.jpg);
 }
 
 .container-app header {
   background-color: black;
   color: white;
-  height: 12vh;
+  height: 20vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   text-transform: uppercase;
 }
 
 .container-app header h1 {
-  font-size: 3em;
+  font-size: 2em;
   font-weight: 300;
 }
 
+.helpers {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-helper {
+ background: none;
+ border: none;
+}
+
+.btn-helper img {
+  width: 20px;
+}
+
+.info-game-deck {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info{
+  background-color: white;
+  width: 90%;
+  border-radius: 15px;
+  position: absolute;
+  top: 20vh;
+}
+
 .container-tryunfo {
-  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 3vh;
 }
 
 .container-cards-maker {
   display: flex;
-  background-color: rgba(128, 128, 128, 0.815);
+  flex-direction: column;
   border-radius: 15px;
-  width: 60%;
+  width: 90%;
   padding: 3vh;
-  justify-content: space-around;
 }
 
- .container-forms {
+.container-forms, .container-card  {
   border: 2px solid black;
   padding: 1vh;
   background-color: black;
 }
 
 .container-card {
-  border: 2px solid black;
-  padding: 1vh;
-  background-color: black;
+  margin-top: 2vh;
 }
 
 .container-deck-filters {
@@ -93,8 +117,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 75vh;
   margin: 10px;
+  width: 80vw;
+  height: 65vh;
 }
 
 .deck-card button {
@@ -109,3 +134,77 @@ body {
   background-color: black;
   color: orangered;
 }
+
+@media screen and ( min-width : 768px) {
+
+  .info {
+    width: 70%
+  }
+
+  .container-cards-maker {
+    width: 50%;
+  }
+
+  .deck-card {
+    width: 35vw;
+  }
+}
+
+@media screen and ( min-width : 1024px) {
+
+  .info {
+    width: 60%
+  }
+  
+  .container-cards-maker {
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .container-forms {
+    width: 30vw;
+    height: 80vh;
+  }
+  
+  .container-card  {
+    margin-top: 0;
+    margin-left: 2vh;
+    width: 30vw;
+    height: 80vh;
+  }
+
+  .deck-card {
+    width: 20vw;
+    height: 70vh;
+  }
+
+  .deck-card button {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and ( min-width : 1440px) {
+
+  .info {
+    width: 50%
+  }
+
+  .container-app header h1 {
+    font-size: 3em;
+  }
+
+  .container-deck-filters h5 {
+    font-size: 3em;
+  }
+
+  .deck-card {
+    height: 70vh;
+  }
+
+  .deck-card button {
+    font-size: 1em;
+  }
+}
+
+

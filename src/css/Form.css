@@ -1,11 +1,10 @@
 .form-floating {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   padding: 1vh;
   border: 2px solid black;
   background-color: aliceblue;
-  width: 25vw;
   height: 100%;
 } 
 
@@ -16,23 +15,29 @@
   justify-content: center;
 }
 
-.input-group label {
-padding-top: 0.5vh;
-}
-
-.input {
-  padding: 2px;
-}
-
-.input::placeholder {
+.input-group  .input::placeholder {
   font-style: italic;
-  font-size: small;
+  font-size: 0.8em;
   color: rgba(128, 128, 128, 0.589);
   padding-left: 0.5vw;
 }
 
+.input-group label, .input-group input, .input-group select, .input-group select option {
+  font-size: 0.75em;
+}
+
+.input-group label {
+  padding-top: 5px;
+}
+
 .trunfo {
   padding-top: 1vh;
+  display: flex;
+  align-items: center;
+}
+
+.trunfo label {
+  font-size: 0.8em;
 }
 
 .input-trunfo {
@@ -40,7 +45,7 @@ padding-top: 0.5vh;
 }
 
 .alert-message {
-  font-size: 12px;
+  font-size: 0.6em;
   color: rgba(0, 0, 255, 0.616);
   font-style: italic;
   display: flex;
@@ -49,4 +54,76 @@ padding-top: 0.5vh;
 
 .save-btn {
   text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+@media screen and ( min-width : 1024px ) {
+  
+  .form-floating {
+    width: 100%;
+    justify-content: space-around;
+
+  } 
+
+  .input-group  .input::placeholder {
+    font-size: 0.8em;
+  }
+
+  .input-group label, .input-group input, .input-group select {
+    font-size: 0.8em;
+    padding: 4px;
+  }
+
+  .input-group select option {
+    font-size: 0.7em;
+  }
+
+  #cardDescription {
+    text-align: justify;
+  }
+  
+  .alert-message {
+    font-size: 0.8em;
+  }
+
+  .trunfo label {
+    font-size: 0.8em;
+  }
+
+  .save-btn {
+    text-transform: uppercase;
+    font-size: 0.8em;
+  }
+}
+
+@media screen and ( min-width : 1440px ) {
+  
+  .input-group  .input::placeholder {
+    font-size: 1.1em;
+  }
+
+  .input-group label, .input-group input, .input-group select {
+    font-size: 1.2em;
+  }
+
+  .input-group select option {
+    font-size: 0.6em;
+  }
+
+  #cardDescription {
+font-size: 1.1em;
+  }
+
+  .alert-message {
+    font-size: 1em;
+  }
+
+  .trunfo label {
+    font-size: 1.3em;
+  }
+
+  .save-btn {
+    text-transform: uppercase;
+    font-size: 1.2em;
+  }
 }
