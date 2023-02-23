@@ -7,13 +7,12 @@
 
 body {
   background-color: rgb(124, 120, 120);
-  background: url();
 }
 
 .container-app {
   height: 100vh;
   background:
-    linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)) ,
+    linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)),
     url(https://images2.alphacoders.com/740/thumb-1920-740460.png);
   background-size: cover;
 }
@@ -63,7 +62,6 @@ body {
 }
 
 .container-deck-filters {
-  border: 2px solid blue;
   width: 100%;
 }
 
@@ -79,4 +77,35 @@ body {
   font-size: 2em;
   font-weight: 200;
   margin-top: 2vh;
+}
+
+.container-deck {
+  display: flex;
+  padding: 1vw;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: linear-gradient(rgba(0, 0, 0, 0.505), rgba(0, 0, 0, 0.908));
+}
+
+.deck-card {
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
+  margin: 10px;
+}
+
+.deck-card button {
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+}
+
+.deck-card button:hover {
+  background-color: black;
+  color: orangered;
 }

@@ -229,7 +229,7 @@ class App extends React.Component {
             {
               infoCardSaved !== []
                 && this.filtersFind().map((card, index) => (
-                  <div key={ card.cardName }>
+                  <div key={ card.cardName } className="deck-card">
                     <Card
                       key={ `${card.cardName}-${index}` }
                       cardName={ card.cardName }

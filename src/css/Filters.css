@@ -1,8 +1,8 @@
 .filters {
-  border: 1px solid red;
   display: flex;
   justify-content: space-around;
-  padding: 2vh;
+  padding: 1vh;
+  background-color: aliceblue;
 }
 
 .nameFilter::placeholder {
