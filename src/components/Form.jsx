@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Form.css';
+import '../css/Form.css';
 
 class Form extends Component {
   render() {
@@ -20,6 +20,10 @@ class Form extends Component {
       onSaveButtonClick,
     } = this.props;
 
+    const sum = () => {
+      return( (parseInt(cardAttr1) + parseInt(cardAttr2) + parseInt(cardAttr3)) > 210)
+    }
+
     return (
       <form className="form-floating">
 
@@ -27,66 +31,84 @@ class Form extends Component {
           <label htmlFor="cardName">Nome</label>
           <input
             type="text"
+            className='input'
             name="cardName"
             id="cardName"
             value={ cardName }
             onChange={ onInputChange }
             data-testid="name-input"
+            placeholder="Nome da sua carta"
           />
 
           <label htmlFor="cardDescription">Descrição</label>
           <textarea
             name="cardDescription"
+            className='input'
             id="cardDescription"
             value={ cardDescription }
             onChange={ onInputChange }
             data-testid="description-input"
+            placeholder="História da carta"
           />
 
-          <label htmlFor="cardAttr1">Attr01</label>
+          <label htmlFor="cardAttr1">Potencial Destrutivo</label>
           <input
             type="number"
             name="cardAttr1"
             id="cardAttr1"
+            className='input'
             value={ cardAttr1 }
             min={ 0 }
             max={ 90 }
             onChange={ onInputChange }
             data-testid="attr1-input"
+            placeholder="Quantidade do atributo"
           />
 
-          <label htmlFor="cardAttr2">Attr02</label>
+          <label htmlFor="cardAttr2">Resistência</label>
           <input
             type="number"
             name="cardAttr2"
             id="cardAttr2"
+            className='input'
             value={ cardAttr2 }
             min={ 0 }
             max={ 90 }
             onChange={ onInputChange }
             data-testid="attr2-input"
+            placeholder="Quantidade do atributo"
           />
 
-          <label htmlFor="cardAttr3">Attr03</label>
+          <label htmlFor="cardAttr3">Velocidade</label>
           <input
             type="number"
             name="cardAttr3"
             id="cardAttr3"
+            className='input'
             value={ cardAttr3 }
             min={ 0 }
             max={ 90 }
             onChange={ onInputChange }
             data-testid="attr3-input"
+            placeholder="Quantidade do atributo"
           />
-
+        {
+          sum() === true 
+            && (
+              <p className='alert-message'>A somatória dos atributos não deve ser superior a 210!</p>
+            )
+        }
           <label htmlFor="cardImage">Imagem</label>
           <input
             type="text"
             name="cardImage"
             id="cardImage"
+            className='input'
             value={ cardImage }
             onChange={ onInputChange }
             data-testid="image-input"
+            placeholder="URL da imagem"
+
           />
 
           <label htmlFor="cardRare">Raridade</label>
@@ -105,29 +127,29 @@ class Form extends Component {
 
         {
           hasTrunfo
-            ? <p>Você já tem um Super Trunfo em seu baralho</p>
+            ? <p className="alert-message">Você já tem um Super Trunfo em seu baralho!</p>
             : (
-              <div>
+              <div className='trunfo'>
+                  <input
+                    className="input-trunfo"
+                    type="checkbox"
+                    name="cardTrunfo"
+                    id="cardTrunfo"
+                    checked={ cardTrunfo }
+                    onChange={ onInputChange }
+                    data-testid="trunfo-input"
+                  />
                 <label htmlFor="cardTrunfo">Super Trunfo</label>
-                <input
-                  className="form-check-input mt-0"
-                  type="checkbox"
-                  name="cardTrunfo"
-                  id="cardTrunfo"
-                  checked={ cardTrunfo }
-                  onChange={ onInputChange }
-                  data-testid="trunfo-input"
-                />
               </div>
             )
         }
-
         <button
           id="submit-btn"
           type="submit"
           disabled={ isSaveButtonDisabled }
           onClick={ onSaveButtonClick }
           data-testid="save-button"
+          className="save-btn"
         >
           Salvar
         </button>

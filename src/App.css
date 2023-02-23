@@ -1,11 +1,82 @@
-/* .container-sm {
-  max-width: 100%;
-} */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-.container-xxl {
+body {
+  background-color: rgb(124, 120, 120);
+  background: url();
+}
+
+.container-app {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)) ,
+    url(https://images2.alphacoders.com/740/thumb-1920-740460.png);
+  background-size: cover;
+}
+
+.container-app header {
+  background-color: black;
+  color: white;
+  height: 12vh;
   display: flex;
-  /* flex-direction: column; */
-  /* justify-content: space-between; */
-  /* align-content: space-between; */
-  border: 2px solid red;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.container-app header h1 {
+  font-size: 3em;
+  font-weight: 300;
+}
+
+.container-tryunfo {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3vh;
+}
+
+.container-cards-maker {
+  display: flex;
+  background-color: rgba(128, 128, 128, 0.815);
+  border-radius: 15px;
+  width: 60%;
+  padding: 3vh;
+  justify-content: space-around;
+}
+
+ .container-forms {
+  border: 2px solid black;
+  padding: 1vh;
+  background-color: black;
+}
+
+.container-card {
+  border: 2px solid black;
+  padding: 1vh;
+  background-color: black;
+}
+
+.container-deck-filters {
+  border: 2px solid blue;
+  width: 100%;
+}
+
+.container-deck-filters h5 {
+  background-color: black;
+  color: white;
+  height: 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: 200;
+  margin-top: 2vh;
 }

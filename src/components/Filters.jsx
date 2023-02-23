@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import '../css/Filters.css';
 
 class Filters extends Component {
   render() {
@@ -12,10 +13,10 @@ class Filters extends Component {
     } = this.props;
 
     return (
-      <div>
-
+      <div className='filters'>
         <label htmlFor="nameFilter">
           Nome:
+          {' '}
           <input
             type="text"
             name="nameFilter"
@@ -24,11 +25,14 @@ class Filters extends Component {
             onChange={ onInputChange }
             disabled={ isFilterDisable }
             data-testid="name-filter"
+            placeholder="Nome da carta"
+            className="nameFilter"
           />
         </label>
 
         <label htmlFor="rareFilter">
           Raridade:
+          {' '}
           <select
             type="text"
             name="rareFilter"
@@ -47,6 +51,7 @@ class Filters extends Component {
 
         <label htmlFor="trunfoFilter">
           Super Trunfo:
+          {' '}
           <input
             type="checkbox"
             name="trunfoFilter"

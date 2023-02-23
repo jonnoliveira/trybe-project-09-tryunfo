@@ -1,0 +1,13 @@
+.filters {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  padding: 2vh;
+}
+
+.nameFilter::placeholder {
+  font-style: italic;
+  font-size: small;
+  color: rgba(128, 128, 128, 0.589);
+  padding-left: 0.5vw;
+}

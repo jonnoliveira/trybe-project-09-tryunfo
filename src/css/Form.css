@@ -1,0 +1,52 @@
+.form-floating {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1vh;
+  border: 2px solid black;
+  background-color: aliceblue;
+  width: 25vw;
+  height: 100%;
+} 
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+.input-group label {
+padding-top: 0.5vh;
+}
+
+.input {
+  padding: 2px;
+}
+
+.input::placeholder {
+  font-style: italic;
+  font-size: small;
+  color: rgba(128, 128, 128, 0.589);
+  padding-left: 0.5vw;
+}
+
+.trunfo {
+  padding-top: 1vh;
+}
+
+.input-trunfo {
+  margin-right: 0.5vw;
+}
+
+.alert-message {
+  font-size: 12px;
+  color: rgba(0, 0, 255, 0.616);
+  font-style: italic;
+  display: flex;
+  align-self: center;
+}
+
+.save-btn {
+  text-transform: uppercase;
+}
