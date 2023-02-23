@@ -83,6 +83,8 @@ Sua aplicação terá três filtros de listagem de cartas: filtro por nome, por 
 ## 4- Preview
 
 </summary>
+ 
+![Project-Tryunfo-Preview-1](https://github.com/jonnoliveira/trybe-project-09-tryunfo/blob/main/image/tryunfo-preview-1.png)
+![Project-Tryunfo-Preview-2](https://github.com/jonnoliveira/trybe-project-09-tryunfo/blob/main/image/tryunfo-preview-2.png)
 
-  
 </details>
