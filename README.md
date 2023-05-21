@@ -36,23 +36,23 @@ No Tryunfo simulei um jogo de cartas onde tive a grande oportunidade de aprender
 
 </summary>
 
-### I. Crie o formulário que será usado para adicionar cartas ao baralho
+* I. Crie o formulário que será usado para adicionar cartas ao baralho
 
-### II. Adicione as props necessárias ao componente de formulário
+* II. Adicione as props necessárias ao componente de formulário
 
-### III. Crie e renderize o componente Card com as props necessárias
+* III. Crie e renderize o componente Card com as props necessárias
 
-### IV. Crie o preview da carta que está sendo criada pelo formulário
+* IV. Crie o preview da carta que está sendo criada pelo formulário
 
-### V. Faça a validação do botão de Salvar no formulário
+* V. Faça a validação do botão de Salvar no formulário
 
-### VI. Crie a função do botão salvar
+* VI. Crie a função do botão salvar
 
-### VII. Crie a validação do Super Trunfo
+* VII. Crie a validação do Super Trunfo
 
-### VIII. Exiba a lista de cartas que estão salvas no estado
+* VIII. Exiba a lista de cartas que estão salvas no estado
 
-### IX. Crie um botão para remover uma carta do baralho
+* IX. Crie um botão para remover uma carta do baralho
 
 ---
 
@@ -60,11 +60,11 @@ No Tryunfo simulei um jogo de cartas onde tive a grande oportunidade de aprender
 
 Sua aplicação terá três filtros de listagem de cartas: filtro por nome, por raridade e por Super Trunfo. Os filtros nome e raridade são acumulativos. O filtro Super Trunfo funciona de forma independente.
 
-### X. Crie o filtro pelo nome da carta
+* X. Crie o filtro pelo nome da carta
 
-### XI. Crie o filtro por raridade da carta
+* XI. Crie o filtro por raridade da carta
 
-###XII. Crie o filtro de Super Trunfo
+* XII. Crie o filtro de Super Trunfo
 
 </details>
 
